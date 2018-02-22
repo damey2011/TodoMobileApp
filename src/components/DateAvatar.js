@@ -10,8 +10,8 @@ export default class DateAvatar extends React.Component {
     render () {
         return (
             <View style={styles.textThumbnail}>
-                <Text style={styles.thumbnailInner}>{this.props.day}</Text>
-                <Text style={styles.thumbnailInnerTime}>{this.props.month}</Text>
+                <Text style={styles.thumbnailInner}>{this.props.index}</Text>
+                {/*<Text style={styles.thumbnailInnerTime}>{this.props.month}</Text>*/}
             </View>
         )
     }
@@ -19,24 +19,24 @@ export default class DateAvatar extends React.Component {
 
 const styles = StyleSheet.create({
     textThumbnail: {
-        width: 60,
-        height: 60,
-        borderWidth: 0.5,
-        borderColor: 'rgba(51,51,51,0.11)',
-        borderRadius: 30,
+        width: 30,
+        height: 30,
+        borderWidth: 0.8,
+        borderColor: 'rgba(51,51,51,0.21)',
+        borderRadius: 15,
         margin: 5,
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 1,
     },
     thumbnailInner: {
-        fontSize: 40,
+        fontSize: 20,
         fontWeight: '800',
         zIndex: 2,
         color: 'gray'
     },
     thumbnailInnerTime: {
-        fontSize: 15,
+        fontSize: 8,
         fontWeight: '300',
         zIndex: 2,
         color: 'blue'

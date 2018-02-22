@@ -2,8 +2,6 @@ export const ADD_TODO = 'ADD_TODO'
 export const DELETE_TODO = 'DELETE_TODO'
 export const UPDATE_TODO = 'UPDATE_TODO'
 export const GET_ALL_TODOS = 'GET_ALL_TODOS'
-export const GET_DONE_TODOS = 'GET_DONE_TODOS'
-export const GET_PENDING_TODOS = 'GET_PENDING_TODOS'
 
 export const AddTodo = (todo) => {
     return {
@@ -12,17 +10,17 @@ export const AddTodo = (todo) => {
     }
 }
 
-export const DeleteTodo = (todo_id) => {
+export const DeleteTodo = (todo) => {
     return {
         type: DELETE_TODO,
-        payload: todo_id
+        payload: todo
     }
 }
 
-export const UpdateTodo = (todo_id, todo) => {
+export const UpdateTodo = (todo) => {
     return {
         type: UPDATE_TODO,
-        payload: {todo_id, todo}
+        payload: todo
     }
 }
 

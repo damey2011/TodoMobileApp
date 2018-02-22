@@ -1,19 +1,19 @@
 import {ADD_TODO, DELETE_TODO, GET_ALL_TODOS, UPDATE_TODO} from "../actions/TodoActions";
 import Todo from "../../Models/Todo";
 
-const initialState = {todos: [new Todo('Buy Steak', 'Get steak from the grocery store', false, new Date(15, 4, 2018))]}
+const initialState = [new Todo('Cucumber', 'Body of Cucumber', false, new Date(2018, 2, 23))]
 
 export const TodoReducer = (state=initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
-            return [...state.todos, action.payload]
+            return [...state, action.payload]
         case GET_ALL_TODOS:
-            return state.todos
+            return state
         case UPDATE_TODO:
-            return state.todos.map(todo => (todo.id === action.payload.todo_id) ? action.payload.todo : todo)
+            return state.map(todo => (todo.id === action.payload.id) ? action.payload : todo)
         case DELETE_TODO:
-            return state.todos.splice(state.todos.findIndex(iter => action.payload === iter), 1)
+            return state.filter(todo => todo !== action.payload)
         default:
-            return state.todos
+            return state
     }
 }
